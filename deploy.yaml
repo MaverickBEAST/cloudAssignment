@@ -37,6 +37,7 @@ jobs:
           cd backend
           docker build -t $ECR_REGISTRY/$ECR_BACKEND_REPOSITORY:latest .
           docker push $ECR_REGISTRY/$ECR_BACKEND_REPOSITORY:latest
+
       - name: Build, Tag, and Push Frontend Image to AWS ECR
         id: build-image2
         env:
@@ -45,11 +46,13 @@ jobs:
           cd frontend
           docker build -t $ECR_REGISTRY/$ECR_FRONTEND_REPOSITORY:latest .
           docker push $ECR_REGISTRY/$ECR_FRONTEND_REPOSITORY:latest
+
       - name: Deploy Backend to EKS
         run: |
           aws eks update-kubeconfig --region ${{ env.AWS_REGION }} --name microcrud
           kubectl apply -f k8s/backend-deployment.yaml
           kubectl apply -f k8s/backend-service.yaml
+
       - name: Deploy Frontend to EKS
         run: |
           aws eks update-kubeconfig --region ${{ env.AWS_REGION }} --name microcrud
