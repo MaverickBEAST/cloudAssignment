@@ -12,7 +12,7 @@ const theme = createTheme({
       main: '#120e4a',
     },
     background: {
-      default: '#a3a3a3',
+      default: '#2d2d2e',
     },
   },
 });
@@ -34,7 +34,7 @@ const App = () => {
 
   const handleLogin = async () => {
     try {
-      await axios.post('http://a1df4e25dba8349ceabfac788c14de6f-1859482808.eu-north-1.elb.amazonaws.com:5000/login', { username, password });
+      await axios.post('http://localhost:5000/login', { username, password });
       setIsLoggedIn(true);
     } catch (error) {
       console.error('Login error:', error);
@@ -44,7 +44,7 @@ const App = () => {
 
   const handleFetchGithubData = async () => {
     try {
-      const response = await axios.get(`http://a1df4e25dba8349ceabfac788c14de6f-1859482808.eu-north-1.elb.amazonaws.com:5000/github/data/${githubUsername}`);
+      const response = await axios.get(`http://localhost:5000/github/data/${githubUsername}`);
       setGithubData(response.data);
     } catch (error) {
       console.error('GitHub data fetch error:', error);
@@ -59,9 +59,6 @@ const App = () => {
         {!isLoggedIn ? (
           <Card style={{ padding: '20px', borderRadius: '8px' }}>
             <CardContent>
-              <Typography variant="h5" style={{ marginBottom: '16px' }}>AECS Assignment</Typography>
-              <Typography variant="body1" style={{ marginBottom: '8px' }}>LBL Senevirathne - MS22906908</Typography>
-              <Typography variant="body1" style={{ marginBottom: '8px' }}>Msc - EAD</Typography>
               <Typography variant="h5" style={{ marginBottom: '16px', marginTop: '16px' }}>Login</Typography>
               <TextField
                 label="Username"

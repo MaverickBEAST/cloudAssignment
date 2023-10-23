@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs');
 const { Octokit } = require("@octokit/rest");
 
 const app = express();
-const octokit = new Octokit({ auth: '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' });
+const octokit = new Octokit({ auth: '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' });
 
 
 // Database connection
