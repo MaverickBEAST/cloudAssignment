@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs');
 const { Octokit } = require("@octokit/rest");
 
 const app = express();
-const octokit = new Octokit({ auth: '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' });
+const octokit = new Octokit({ auth: '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' });
 
 
 // Database connection
@@ -15,6 +15,7 @@ const connection = mysql.createConnection({
   user: 'admin',
   password: 'WordLife123!',
   database: 'crudapp',
+  port: 3306,
 });
 
 connection.connect(err => {

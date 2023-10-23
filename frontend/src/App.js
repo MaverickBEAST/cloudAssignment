@@ -59,7 +59,10 @@ const App = () => {
         {!isLoggedIn ? (
           <Card style={{ padding: '20px', borderRadius: '8px' }}>
             <CardContent>
-              <Typography variant="h5" style={{ marginBottom: '16px' }}>Login</Typography>
+              <Typography variant="h5" style={{ marginBottom: '16px' }}>AECS Assignment</Typography>
+              <Typography variant="body1" style={{ marginBottom: '8px' }}>LBL Senevirathne - MS22906908</Typography>
+              <Typography variant="body1" style={{ marginBottom: '8px' }}>Msc - EAD</Typography>
+              <Typography variant="h5" style={{ marginBottom: '16px', marginTop: '16px' }}>Login</Typography>
               <TextField
                 label="Username"
                 value={username}
