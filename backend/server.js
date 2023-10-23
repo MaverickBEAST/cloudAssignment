@@ -11,10 +11,10 @@ const octokit = new Octokit({ auth: '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' }
 
 // Database connection
 const connection = mysql.createConnection({
-    host: 'microcrud.cjbcanpgblym.eu-north-1.rds.amazonaws.com',
-    user: 'admin',
-    password: 'WordLife123!',
-    database: 'crudapp'
+  host: 'microcrud.cjbcanpgblym.eu-north-1.rds.amazonaws.com',
+  user: 'admin',
+  password: 'WordLife123!',
+  database: 'crudapp',
 });
 
 connection.connect(err => {
